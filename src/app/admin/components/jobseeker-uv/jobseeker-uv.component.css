@@ -1,0 +1,122 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap'); 
+
+
+.button{
+    padding: 5px 10px;
+    margin: 5px auto;
+    background-color: #d6dbe2;
+    width: 100px
+}
+
+.btn{
+    background-color: #ffffff;
+    color:#000000
+  }
+
+  #btn:hover{
+    background-color: #ffffff;
+    color:#000000
+  }
+
+p {
+    font-size: larger;
+    font-family:  Geneva, Tahoma, sans-serif, serif;
+    font-weight: 600;
+    background-color: #bdbaba;
+    display:block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding:5px
+}
+
+.fields{
+    font-weight: 500;
+    color:rgb(0, 0, 0);
+    background-color: #ffffff;
+    display:block;
+    padding:5px
+}
+
+#feedback{
+    padding: 5px;
+    display: block;
+    max-width: 100em;
+}
+textarea{
+    margin: 3px auto;
+    background-color: #ffffff;
+    color:rgb(195, 195, 195);
+    box-sizing: border-box;
+    width: 95%;
+    height: auto;
+    outline:none;
+}
+
+.card{
+text-align: start;
+background-color: #ffffff;
+box-shadow: 3px 3px 5px;
+min-width: 300px;
+
+}
+.body{
+    background-color: rgb(255, 255, 255);
+}
+
+.test{
+    margin: 5px auto;
+}
+
+/* .nav{
+    background-color: #5878df;
+    height:60px;
+    position: sticky ;
+    top:0px;
+    z-index: 1;
+    box-shadow: 0px 2px 5px #2a5fa9;;
+    margin-bottom: 10px;
+} */
+
+.tabs{
+    text-align-last: center;
+}
+
+.tab{
+    margin: 20px 10px 
+}
+
+/* .body{
+    padding-top: 10px;
+} */
+
+.active{
+    background-color: #9fa3a5;
+    color:#020f20;
+    font-weight: 800;
+    border: 1px solid  #b0b1b3;;
+}
+
+.navbar{
+    
+    background-color:blue !important;
+    width: 100% ;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Set header text color */
+  }
+
+.bttn{
+    margin-right: 5px;
+}
+  
+/* .collect{
+    background-color: #b6d8ef;
+    padding: 20px;
+    border-radius: 10px;
+} */

@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="container">
+  <input type="text" class="search-input" placeholder="Find your Job Here" [(ngModel)]="searchText" (keyup)="search()">
+  
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="col mb-4" *ngFor="let job of jobs">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">{{ job.jobTitle }}</h2>
+          <h5 class="card-subtitle mb-2 text-muted">Company: {{ job.companyName }}</h5>
+          <p class="card-text">
+            Place: {{ job.location }}<br>
+            Qualification: {{ job.qualification }}<br>
+            Experience: {{ job.experience }}<br>
+            Closing Date: {{ job.closingDate | date }}<br>
+            Salary Range: {{ job.salaryRange }}<br>
+            Skills: {{ job.skills }}
+          </p>
+          <p class="card-text scroll">Description: {{ job.description }}</p>
+          <button type="button" class="btn btn-light" [ngClass]="{'disabled': datecheck(job.closingDate)}" data-bs-toggle="modal" data-bs-target="#contents" (click)="storeid(job._id)">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="contents" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Apply for Job</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="formFile" class="form-label">Resume Upload</label>
+            <input class="form-control" type="file" id="formFile" (change)="fileselect($event)"/>
+          </div>
+          <div class="form-group">
+            <label for="profileLink" class="form-label">Profile Link</label>
+            <input type="text" id="profileLink" formControlName="link" class="form-control" placeholder="Enter your profile link">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

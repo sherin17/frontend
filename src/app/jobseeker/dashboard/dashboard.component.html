@@ -1,0 +1,147 @@
+
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+        <span class="logo">JobLinker</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="ms-auto">
+            <button mat-stroked-button (click)="tojobs(jobseekerdata._id)" color="basic" class="m-2 me-4">
+                <mat-icon>works_outline</mat-icon>View Jobs
+            </button>
+            <button mat-stroked-button color="basic" class="m-2 me-4" routerLink="" (click)="function()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid mt-1">
+    <div class="row">
+        <div class="col-md">
+               <h1>Welcome  {{jobseekerdata.name}}</h1>
+            
+        </div>
+    </div>
+</div>
+<mat-card class="m-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10"> 
+                <h2>Personal Details</h2>
+            </div>
+            <div class="col-md-2">
+                <button type="button" (click)="navigatetogeneraldata(jobseekerdata._id)"
+                    class="btn btn-light">Add/Edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Name</h4>
+                <h3>{{jobseekerdata.name}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Email</h4>
+                <h3>{{jobseekerdata.email}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Phone Number</h4>
+                <h3>{{jobseekerdata.phone}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Highest Qualification</h4>
+                <h3>{{jobseekerdata.highest_qualification}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Gender</h4>
+                <h3>{{jobseekerdata.gender}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Date of Birth</h4>
+                <h3>{{jobseekerdata.date_of_birth|date}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Permanent Address</h4>
+                <h3>{{jobseekerdata.permanent_address}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            
+            
+            <div class="col-md-4">
+                <h4>Eircode</h4>
+                <h3>{{jobseekerdata.eircode}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>City</h4>
+                <h3>{{jobseekerdata.city}}</h3>
+            </div>
+        </div>
+        <div class="row">
+           
+            <div class="col-md-4">
+                <h4>County</h4>
+                <h3>{{jobseekerdata.county}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Country</h4>
+                <h3>{{jobseekerdata.country}}</h3>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+    <mat-card class="m-1 p-2" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <h2>Education</h2>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" (click)="navigatetoeducation(jobseekerdata._id)" class="btn btn-light">Add</button>
+                </div>
+            </div>
+           <div class="row">
+            <div class="col-md-4 p-4" *ngFor="let education of educations">
+            <h4>{{education.qualification}}</h4>
+            <p>College: {{education.university}}</p>
+            <p>Completion Status: {{education.completion_status}}</p>
+            <p>Percentage{{education.percentage}}</p>
+            <p>Year of Passing: {{education.year_of_pass}}</p>
+            </div>
+           </div>
+                
+            </div>
+    </mat-card>
+
+    <mat-card class="m-1 p-2" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <h2>Experience</h2>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" (click)="navigatetoexperience(jobseekerdata._id)" class="btn btn-light">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 p-4" *ngFor="let experience of experiences">
+                    <h4>Company: {{experience.company}}</h4>
+                    <p>Designation: {{experience.Designation}}</p>
+                    <p>Presently working: {{experience.presently_working}}</p>
+                    <p>Starting Date: {{experience.starting_date|date}}</p>
+                    <p>Ending Date: {{experience.ending_date|date}}</p>
+                    <p>Salary: {{experience.current_monthly_salary}}</p>
+                    <p>Notice Period: {{experience.notice_period}}</p>
+                     <!-- <button type="submit" class="btn btn-light"
+                      (click)="deleteexperience(experience._id)">Delete</button>  -->
+                </div>
+            </div>
+            
+              </div>
+    </mat-card>
+

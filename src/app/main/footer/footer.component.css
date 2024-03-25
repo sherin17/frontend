@@ -1,0 +1,8 @@
+footer{
+    text-align: center;
+    background: linear-gradient(90deg, rgb(112, 93, 102)0%, rgb(123, 123, 148)35%, rgb(17, 67, 77)100%);
+    padding-top: 5px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 0;
+}

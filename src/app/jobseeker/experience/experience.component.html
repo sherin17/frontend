@@ -1,0 +1,82 @@
+<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+      <div style="height:88vh;">
+        <div class="container">
+        <mat-card class="m-2">
+          <div class="container">
+            <div>
+              <h2 class="text-center" style="color:rgb(82, 82, 90)">Experience Details</h2>
+            </div>
+            <form #experienceForm="ngForm" (ngSubmit)="onsubmit()">
+            <div class="row ">
+              <div class="col-md-1 mt-4">
+                Company
+              </div>
+              <div class="col-md-11">
+                <input type="text" class="form-control" name="company"
+                placeholder="Company/Organization" [(ngModel)]="holder.company" required>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-1 mt-4">
+                Designation
+              </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="Designation"
+                   placeholder="Designation/Designation" [(ngModel)]="holder.Designation" required>
+                </div>
+                <div class="col-md-2 mt-4">
+                 Presently working
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="presently_working" 
+                    placeholder="Presenting Working/Not" [(ngModel)]="holder.presently_working" required>
+                  </div>
+              </div>
+            <div class="row ">
+                <div class="col-md-2 mt-4">
+                    <label for="">Starting Date :</label>
+                </div>
+              <div class="col-md-4">
+                <input type="date" class="form-control" name="starting_date" [(ngModel)]="holder.starting_date" required>
+              </div>
+              <div class="col-md-2 mt-4">
+                <label for="">Ending Date :</label>
+            </div>
+          <div class="col-md-4">
+            <input type="date" class="form-control" name="ending_date" [(ngModel)]="holder.ending_date" required>
+          </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-2 mt-3">
+               Current Salary
+               </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" name="current_monthly_salary" 
+                placeholder="Current monthly salary" [(ngModel)]="holder.current_monthly_salary" required>
+              </div>
+              <div class="col-md-2 mt-4">
+               Notice Period
+               </div>
+              <div class="col-md-4">
+                <input type="number" class="form-control" name="notice_period"
+                 placeholder="Notice Period" [(ngModel)]="holder.notice_period" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center m-4 ps-3 pe-3">
+                   <button type="submit" class="btn btn-light">Save</button>
+              </div>
+             </div>
+            </form>
+          </div>
+        </mat-card>   
+        </div>
+      </div>    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+        
+             
+       

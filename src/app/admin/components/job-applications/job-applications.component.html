@@ -1,0 +1,109 @@
+<div class="body">
+  <nav class="navbar bg-light" >
+      <div class="container-fluid">
+        <span class="logo">JobLinker</span>
+        <div class="" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-outline-dark d-inline" routerLink="/dashadmin">BACK</button>
+              <button class="btn btn-outline-dark logout" routerLink="/home" (click)="function()">LOGOUT</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid row mx-auto">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div class="col mb-4" *ngFor="let job of jobs">
+        <div class="card h-100">
+          <div class="card-body">
+            <span><p class="dlt" (click)="deleteJob(job._id)">DELETE</p></span>
+            <h2 class="card-title">{{ job.jobTitle }}</h2>
+            <h5 class="card-subtitle mb-2 text-muted">Company: {{ job.companyName }}</h5>
+            
+            <div>
+              <p class="title">Job Title: </p><span>{{ job.jobTitle }}</span>
+            </div>
+            <div>
+              <p class="title">Company: </p><span>{{ job.companyName }}</span>
+            </div>
+            <div>
+              <p class="title">Place: </p><span>{{ job.location }}</span>
+            </div>
+            <div>
+              <p class="title">Qualification: </p><span>{{ job.qualification }}</span>
+            </div>
+            <div>
+              <p class="title">Experience: </p><span>{{ job.experience }}</span>
+            </div>
+            <div>
+              <p class="title">Closing Date: </p><span>{{ job.closingDate | date }}</span>
+            </div>
+            <div>
+              <p class="title">Salary Range: </p><span>{{ job.salaryRange }}</span>
+            </div>
+            <div>
+              <p class="title">Skills: </p><span class="skills">{{ job.skills }}</span>
+            </div>
+            
+          <button (click)="view(job._id)" class="btn mb-3 button btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#view">View Applications</button>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+       <!-- modal -->
+  <div class="modal fade" id="view" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" ><b>{{condition}}</b></h3>
+          <button  class="btn btn-head" data-bs-dismiss="modal">close</button>
+        </div>
+        <div class="modal-body">
+          <div class="applications border-dark border-bottom pb-3" *ngFor="let data of applications" >
+            <div class="contents" *ngIf="data != null">
+
+             <a [href]="data.resume" target="_blank" rel="noopener noreferrer" ><button class="download_btn" mat-button>Download Resume</button></a>
+
+              <p id="plink">Profile Links: <span>{{ data.link }}</span></p> <!-- changes here -->
+              <mat-expansion-panel hideToggle (click)="getprofile(data.jobseeker_id)" class="profile_display">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    SHOW FULL PROFILE
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      PERSONAL DETAILS                                                                  <!--add extra dropdowns-->
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                    <span *ngIf = "profile == null;  else other"> THIS PROFILE IS NOT AVAILABLE </span>
+                    <ng-template #other>
+                      <SPAN *ngIf="profile != null">Approval Status: </SPAN><em *ngIf="profile != null">{{profile.approval_status}}</em><br>
+                      <SPAN *ngIf="profile != null">Name: </SPAN><em *ngIf="profile != null">{{profile.name}}</em><br>
+                      <SPAN *ngIf="profile != null">Email: </SPAN><em *ngIf="profile != null">{{profile.email}}</em><br>
+                      <SPAN *ngIf="profile != null">Phone Number: </SPAN><em *ngIf="profile != null">{{profile.phone}}</em><br>
+                      <SPAN *ngIf="profile != null">Gender: </SPAN><em *ngIf="profile != null">{{profile.gender}}</em><br>
+                      <SPAN *ngIf="profile != null">Date of Birth: </SPAN><em *ngIf="profile != null">{{profile.date_of_birth | date}}</em><br>
+                      <SPAN *ngIf="profile != null">Country: </SPAN><em *ngIf="profile != null">{{profile.country}}</em><br>
+                      <SPAN *ngIf="profile != null">Highest Qualification: </SPAN><em *ngIf="profile != null">{{profile.highest_qualification}}</em><br>
+                    </ng-template>
+                </mat-expansion-panel>                  
+              </mat-expansion-panel>
+
+              <button type="button" class="btn btn-danger my-3" (click)="delete(data._id)">Delete</button>
+              <button type="button" class="btn btn-success my-3" (click)="verify(data._id)">Verify</button> 
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>   
+   <!-- modal ends -->
+
+
+  </div>

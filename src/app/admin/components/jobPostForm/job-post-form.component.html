@@ -1,0 +1,34 @@
+<div class="body">
+    <nav class="navbar bg-light" >
+        <div class="container-fluid">
+          <span class="logo">JobLinker</span>
+          <div class="" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-outline-dark d-inline" routerLink="/dashadmin">BACK</button>
+                <button class="btn btn-outline-dark logout" routerLink="/home" (click)="function()">LOGOUT</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+   <form [formGroup] ="jobForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <label for="jobTitle">JOB TITLE: <input id="jobTitle" type="text" formControlName="jobTitle"></label>
+        <label for="companyName">COMPANY NAME: <input id="companyName" type="text" formControlName="companyName"></label>
+        <label for="qualification">EDUCATIONAL QUALIFICATION: <input id="qualification" type="text" formControlName="qualification"></label>
+        <label for="jobSector">JOB SECTOR: <input id="jobSector" type="text" formControlName="jobSector"></label>
+        <label for="location">LOCATION: <input id="location" type="text" formControlName="location"></label>
+        <label for="skills">REQUIRED SKILLS: <input id="skills" type="text" formControlName="skills" placeholder="ex: communication, programming.."></label>
+        <label for="description">JOB DESCRIPTION: <textarea id="description" rows="5" cols="30" placeholder="Job description..." formControlName="description"></textarea></label>
+        <label for="salaryRange">SALARY RANGE: <input id="salaryRange" type="text" formControlName="salaryRange" placeholder="Per hour"></label>
+        <label for="experience">EXPERIENCE : <input id="experience" type="text" formControlName="experience" placeholder="in years"></label>
+        <label for="closingDate">CLOSING DATE: <input id="closingDate" type="date" formControlName="closingDate"></label>
+        <input id="postedBy" type="hidden" value="admin" formControlName="postedBy">
+    </fieldset>
+    <p *ngIf="status" class="alert" style=" color: rgb(215, 44, 44)">Please fill all inputs</p>
+    <input id="btn" type="submit" value="POST JOB">
+   </form>
+</div >
+ 

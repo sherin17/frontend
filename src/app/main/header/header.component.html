@@ -1,0 +1,22 @@
+ <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+     <img class="logo"> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <button class="color" mat-raised-button [matMenuTriggerFor]="menu" routerLink="/home" >Home</button>
+        <button class="color" mat-raised-button [matMenuTriggerFor]="menu" >Login/Register</button>
+        <mat-menu #menu="matMenu">
+          <h3>Registration</h3>
+          <button mat-menu-item routerLink="/jobseekersignup">Jobseeker</button>
+        <h3>Login</h3> 
+        <button mat-menu-item routerLink="/jobseekerlogin">Jobseeker Login</button>
+        <button mat-menu-item routerLink="/adminlogin" >Admin Login</button>
+        </mat-menu>
+      </ul>
+    </div>
+  </div>
+</nav>

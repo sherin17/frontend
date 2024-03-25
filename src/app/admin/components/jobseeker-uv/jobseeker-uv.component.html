@@ -1,0 +1,39 @@
+<div class="body">
+  
+  <nav class="navbar bg-light sticky-top" >
+    <div class="container-fluid">
+      <span class="logo">JobLinker</span>
+      <div class="" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ms-auto">
+            <button class="btn btn-outline-dark bttn" routerLink="/dashadmin">BACK</button>
+            <button class="btn btn-outline-dark logout bttn" routerLink="/home" (click)="function()">LOGOUT</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container-fluid">
+  <div class="row collect conatiner-fluid">
+    <div *ngFor ="let jobseeker of jobseekerData" class="container col-lg-6 test">
+        <mat-card class="card">
+          <mat-card-content>
+            <form [formGroup] = "feedbackForm " class="row" >
+                <div class=" fields col-md-6"><p>Name : </p><span>{{jobseeker.name}}</span></div>
+                <div class=" fields col-md-6"><p>email : </p><span>{{jobseeker.email}}</span></div> 
+                <div class=" fields col-md-6"><p>Phone : </p><span>{{jobseeker.phone}}</span> </div>
+                <div class=" fields col-md-6"><p>Hightest Qualification:</p><span>{{jobseeker.highest_qualification}}</span></div> 
+                <div class=" fields col-md-6 mx-auto"><p>Placement Status:</p><span>{{jobseeker.placement_status}}</span> </div>
+                <div class=" fields col-md-6 mx-auto"><p>Company name:</p><span *ngIf="jobseeker.company_name != null; else nil">{{jobseeker.company_name}}</span><ng-template #nil><span>nil</span></ng-template> </div>
+        
+                 <button type="button" class="btn button btn-outline-danger" (click)="delete(jobseeker._id)">Delete</button>
+                 <button type="button" class="btn button btn-outline-success" (click)="approve(jobseeker)">Verify</button>
+                 
+            </form>
+        </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+</div>

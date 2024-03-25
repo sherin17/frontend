@@ -1,0 +1,13 @@
+mat-card{
+    margin-top: 10px;
+    height: 100%;
+    box-shadow: 20px 20px 18px 20px #1e1a1a;
+    border-radius: 1px;
+}
+input{
+    padding-right: 80px;
+    padding-top: 3px;
+}
+.file-input {
+    display: none;
+  }

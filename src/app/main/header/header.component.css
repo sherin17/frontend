@@ -1,0 +1,29 @@
+.spacer{
+    flex:1 1 auto;
+}
+
+.color{
+    margin-left: 10px;
+    background: transparent;
+    color: white;
+}
+
+h4{
+    color: rgb(55, 117, 74);
+    font-weight: 500;
+}
+
+nav{
+    background-color: #007bff;
+    
+}
+.logo{
+
+     display: block;
+     max-width:100px;
+     max-height:50px;
+     scale:5;
+     aspect-ratio: auto;
+     padding-left: 20px;
+     /* border: 1px solid red; */
+}

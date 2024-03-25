@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<body>
+    <div class="wrapper"></div>
+    <div class="container">
+        <mat-card>
+            <form [formGroup]="jobseekerSignup" (ngSubmit)="sign()" class="bg-light">
+                <div class="row g-0">
+                    <div class="col text-center p-2 mb-1 bg-light">
+                        <span class="fs-3">Sign Up</span>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col mb-2">
+                        
+                        <input type="text" class="form-control" placeholder="Name" id="name" formControlName="name">
+                        <div class="form-text text-danger"
+                            *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+                            Name is required
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">
+                            Name is too short
+                        </div>
+                    </div>
+                    <div class="col mb-2">
+    
+                        <input type="text" class="form-control" placeholder="Email Address" id="email"
+                            formControlName="email">
+                        <div class="form-text text-danger"
+                            *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                            email is required
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="Email.errors?.['pattern'] && (Email.touched || Email.dirty)">
+                            ***invalid email
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    
+                    <div class="col mb-2">
+    
+                        <input type="text" class="form-control" placeholder="Phone Number" id="phone"
+                            formControlName="phone">
+                        <div class="form-text text-danger"
+                            *ngIf="Phone.errors?.['required'] && (Phone.touched || Phone.dirty)">
+                            phone number is required
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="Phone.errors?.['pattern'] && (Phone.touched || Phone.dirty)">
+                            ***invalid phone number
+                        </div>
+                    </div>
+                    <div class="col ">
+    
+                        <input type="text" class="form-control" placeholder="Highest Qualification" id="qualification"
+                            formControlName="highest_qualification">
+                        <div class="form-text text-danger"
+                            *ngIf="Highest_Qualification.errors?.['required'] && (Highest_Qualification.touched || Highest_Qualification.dirty)">
+                            Field is invalid
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col mb-2">
+    
+                        <input type="text" class="form-control" id="company" placeholder="Company Name"
+                            formControlName="company_name">
+    
+                    </div>
+                    <div class="col mb-2">
+                        <input type="password" class="form-control" id="Password" placeholder="Password"
+                            formControlName="password">
+                        <div class="form-text text-danger"
+                            *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                            Field is invalid
+                        </div>
+                        <div class="form-text text-danger"
+                            *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
+                            password should contain atleast 8 and 15 charecters
+                        </div>
+                    </div>
+                </div>
+                
+    
+                <div class="row p-1">
+                    <div class="col mb-2" style="margin-left: 42%;">
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+       
+    </div>
+
+
+</body>

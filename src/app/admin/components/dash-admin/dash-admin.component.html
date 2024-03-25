@@ -1,0 +1,62 @@
+
+
+<div class="body continer-fluid">
+    <nav class="navbar navbar-expand-sm  navbar-dark">
+      <span class="logo">JobLinker</span>
+        <div class="container-fluid">
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/jobpost">PostJob</button>
+                <button mat-menu-item routerLink="/verifyjobseeker"> Profiles </button>
+                <button mat-menu-item routerLink="/adminjobsandapplies">Applications</button>
+                <button mat-menu-item routerLink="/home" (click)="function()">Logout</button>
+            </mat-menu>
+            <div class="container-fluid logocon">
+                 
+            </div>
+            <button mat-button [matMenuTriggerFor]="menu" class=" d-sm-none drop">Navs</button>
+          <div class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="navbar-nav" >
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/jobpost">PostJob</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/verifyjobseeker">Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adminjobsandapplies">Applications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home"  (click)="function()">Logout</a>
+              </li>
+    
+            </ul>
+          </div>
+        </div>
+     </nav>
+<h1 class=" h1 col container mx-auto">Jobseeker DATA</h1>
+<div class="row rowjobseeker container mx-auto">
+    <div class= "container col-sm-6 mx-auto mb-3 jobseekerver">
+        <h1>Verfied jobseeker profiles</h1><br>
+        <span>{{jobseekerV.length}}</span>
+    </div>
+    <div class= " container col-sm-6 mx-auto mb-3 jobseekerun">
+        <h1>Unverfied jobseeker profiles</h1><br>
+        <span>{{jobseekerUV.length}}</span>
+    </div>
+</div>
+
+
+<h1 class=" h2  col container mx-auto display-6">APPLICATIONS</h1>
+<div class="row rowjobseeker container mx-auto">
+    <div class= "col-sm-6 mx-auto mb-3 jobseekerver container">
+        <h1>Verfied Applications</h1><br>
+        <span>{{appV.length}}</span>
+    </div>
+    <div class= "col-sm-6 mx-auto mb-3 jobseekerun container">
+        <h1>Unverfied Applications</h1><br>
+        <span>{{appUV.length}}</span>
+    </div>
+</div>
+
+
+</div>

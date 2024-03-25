@@ -1,0 +1,119 @@
+
+/* Container Styles */
+.container {
+  margin-bottom: 20px; /* Add margin bottom to the container */
+  margin-top: 70px;
+  background-color: #f9f9f9; /* Set container background color */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-header {
+  background-color: #fff;
+}
+
+.card-footer {
+  background-color: #f9f9f9;
+}
+
+/* Button Styles */
+.btn-light {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-light:hover {
+  background-color: #e0e0e0;
+}
+
+/* Ensure cards have equal height */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add this CSS to your existing stylesheet or create a new one */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.card-title {
+  color: #333;
+}
+
+.card-subtitle {
+  color: #666;
+}
+
+.card-text {
+  color: #777;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.scroll {
+  overflow: auto;
+  max-height: 100px; /* Adjust as needed */
+}
+
+.search-input {
+  margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal-content {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.modal-title {
+  color: #333;
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+/* Search Input Styles */
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+

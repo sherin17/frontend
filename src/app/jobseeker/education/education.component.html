@@ -1,0 +1,84 @@
+<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+      <div style="height:88vh;">
+      <mat-card class="m-2">
+        <div>
+          <h2 class="text-center" style="color:rgb(82, 82, 90)">Education Details</h2>
+        </div>
+        <div class="container">
+          <form #educationForm="ngForm" (ngSubmit)="onsubmit()">
+          <div class="row">
+            <div class="col-md-1 mt-4">
+              <label for="">Qualification:</label>
+              </div>
+              <div class="col-md-5">
+              <input type="text" class="form-control" name="qualification"
+               placeholder="Qualification : Graduation" [(ngModel)]="holder.qualification" required>
+            </div>
+            <div class="col-md-1 mt-3">
+              <label for="">Completion Status</label>
+              </div>
+              <div class="col-md-5">
+              <input type="text" class="form-control" name="completion_status"
+               placeholder="Completion Status" [(ngModel)]="holder.completion_status" required >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1 mt-4">
+              <label for="">Stream</label>
+              </div>
+              <div class="col-md-5">
+              <input type="text" class="form-control" name="main_stream" 
+              placeholder="Main Stream : Btech/BSc/MSc/Mtech" [(ngModel)]="holder.main_stream" required >
+            </div>
+            <div class="col-md-1 mt-4">
+              <label for="">Specialization
+                </label>
+                </div>
+              <div class="col-md-5">
+              <input type="text" class="form-control" name="specialization"
+               placeholder="Specialization : Computer Science" [(ngModel)]="holder.specialization" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-1 mt-4">
+              <label for="">University
+                </label>
+                </div>
+              <div class="col-md-5">
+              <input type="text" class="form-control" name="university"
+               placeholder="University/Institute/Board" [(ngModel)]="holder.university" required>
+            </div>
+            <div class="col-md-1 mt-4">
+              <label for="">Percentage
+                </label>
+                </div>
+            <div class="col-md-5">
+              <input type="number" class="form-control" name="percentage" 
+              placeholder="Percentage" [(ngModel)]="holder.percentage" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1 mt-4">
+                <label for="">Year of passing
+                  </label>
+                  </div>
+              <div class="col-md-5">
+              <input type="number" class="form-control" name="year_of_pass" 
+              placeholder="Year of passing" [(ngModel)]="holder.year_of_pass" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center m-4 ps-3 pe-3">
+                <button type="submit" class="btn btn-light">Save</button>
+            </div>
+           </div>
+          </form>
+        </div>
+      </mat-card>
+      </div>    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+    
+  

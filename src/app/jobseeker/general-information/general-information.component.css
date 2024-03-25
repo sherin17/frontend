@@ -1,0 +1,14 @@
+.form-control{
+    background:transparent;
+    border-radius: 0px;
+    border:0px;
+    border-bottom: 1px solid rgb(218, 211, 211);
+    margin-top: 10px;
+    height: 40px;
+    color: black;
+   }
+   select{
+    margin-top: 19px;
+    color: rgb(128, 121, 121);
+   }
+  
